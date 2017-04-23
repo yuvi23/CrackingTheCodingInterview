@@ -1,12 +1,15 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
-public class Q2 
+public class Permut 
 {
 	public static void main(String args[])
 	{	
 		int count=0;
-		String a = "Yuvraj";
-		String b = "Yuvj";
+		Scanner sc = new Scanner(System.in);
+		String a = sc.nextLine();
+		String b = sc.nextLine();
+		
 		
 		a = a.toLowerCase();
 		b = b.toLowerCase();
@@ -15,6 +18,7 @@ public class Q2
 		{
 			//System.out.println("They are not permutation");
 			//goto;
+			count++;
 		}
 		else
 		{
@@ -28,18 +32,19 @@ public class Q2
 			{
 				if(a1[i] == b1[i])
 				{	
-					count++;
+					
 					continue;
 				}
 				else
 				{	
-					
+					count++;
 					break;
 				}
 			}
 		}
 		
-		if(count != 0)
+		
+		if(count == 0)
 		{
 			System.out.println("They are permutation");
 		}
