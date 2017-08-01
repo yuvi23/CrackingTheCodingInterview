@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int max = Integer.MIN_VALUE;
+        Stack<Integer> st = new Stack<Integer>();
+        for(int i = 0 ; i < n ; i++)
+        {
+            int c = sc.nextInt();
+           
+            if(c == 1)
+            {   
+                int a = sc.nextInt();
+                max = Math.max(a , max);
+                st.push(max);
+            }
+            
+            if(c == 2)
+            {
+                if(!st.isEmpty())
+                {
+                    st.pop();
+                }
+                
+                if(st.isEmpty())
+                    max = Integer.MIN_VALUE;
+                else
+                    max =  st.peek();
+            }
+                
+            if(c == 3)
+            {
+                System.out.println((int)st.peek());
+            }
+         }
+     }
+   }
